@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
+@RequestMapping("/serviceA")
 public class userController {
 
     @Value("${PORT_VAL}")
     private String port_val;
 
-    @RequestMapping("/helloA")
-    public String helloA(){
+    @RequestMapping("/hello")
+    public String hello(){
         System.out.println("inside helloA controller of service A");
         System.out.println("hello A.....");
         return "hello A from port:"+port_val;
